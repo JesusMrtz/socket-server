@@ -2,7 +2,7 @@
 
 ## **Necesitar tener instalado los siguientes packages de manera global en tu computadora**
 - node >= 16.14.2
-- nodemon >=
+- nodemon >= 2.0.19
 - typescript >= 4.8.2
 ---
 ## **Levantar el proyecto en tu computadora**
