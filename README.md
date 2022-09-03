@@ -5,7 +5,7 @@
 - nodemon >=
 - typescript >= 4.8.2
 ---
-## **Levantar el proyecto en tu computadora
+## **Levantar el proyecto en tu computadora**
 
 - Reconstruir módulos de Node
 ```
