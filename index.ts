@@ -3,7 +3,7 @@ import router from './routes/routes';
 import cors from 'cors';
 
 
-const server = new Server();
+const server = Server.instance;
 
 // Cors
 server.app.use(cors({ origin: true, credentials: true }))
