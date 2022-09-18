@@ -1,0 +1,51 @@
+1. ¿QUÉ SON LOS SOCKETS?
+
+  - El cliente se subscribe a escuchar la comunicación del servidor
+  - El servidor dispara la información para que el cliente escuche
+  - Los clientes puede también disparar información hacia el servidor y este los registra y se los envia a los clientes subscritos.
+
+
+  Diferencia entre los sockets y las APIS REST
+    - Vamos a usar sockets cuando necesitemos una comunicación en tiempo real del servidor hacia los clientes, clientes con clientes o bien clientes con el servidor.
+    - La APIS REST se utiliza cuando hacemos un CRUD, no importa  la comunicación en tiempo real.
+
+
+  Conceptos claves para el manejo de sockets
+    - Socket.IO cuenta con dos eventos para verificar si un cliente se encuentra conectado o desconectado
+      * on('disconnect', callBack)
+      * on('connect', sokect => {})
+
+    - Para escuchar cualquier otro eventos personalizado utilizamos el método 
+    on('nombre-del-evento', (payload?, callBack?))
+
+     * .on('entrar-cliente', client => {})
+     * .on('enviar-mensaje', client => {})
+     * .on('siguiente-ticket', (objeto, callBack) => {})
+
+    - Cuando queremos emitir o comunicar un mensaje mediante sockets se utiliza el método 
+    emit('nombre-del-evento', object)
+
+      * .emit('nuevo-correo', { from: 'Jesús'})
+
+    - Para escuchar los eventos del servidor desde Angular se utliza el siguiente código:
+      * this.socket.fromEvent('evento')
+
+    - Broadcast: Envia un mensaje a todos los clientes conectados menos a la persona o cliente que envía el mensaje.
+      * ion.on('connection', socket => socket.broadcast.emit('usuario-conectado'))
+
+    - In y To: Sirven para emitir mensajes a usuarios que se encuentren en una sala específica o enviar mensajes privados.
+      * Son exactamente iguales pero depente en donde se llamen:
+        * Si trabajo en base a socket utilizo el To
+        * Si queremos enviar un mensaje a una salao cliente pero lo estamos trabajando de manera REST se utiliza el In
+
+    - Hay otras librerias para trabajar con sockets además de socket.io (es la más popular)
+      * Feathers
+      * SocketCluster
+      * websockets/ws
+      * sockjs/sockjs-node 
+
+
+
+2. ANGULAR APP + SOCKET SERVER 
+
+  
